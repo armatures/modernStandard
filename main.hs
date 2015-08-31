@@ -30,8 +30,8 @@ numWord 9 = "Nine"
 
 modern :: Score -> String
 modern (Score (a,b))
-              | a < b     = deuce a ++ " " ++ duplicity (a-b) ++ " out"
-              | a > b     = deuce b ++ " " ++ duplicity (a-b) ++ " in"
+              | a < b     = unwords $ [deuce a, duplicity (a-b), "out"]
+              | a > b     = unwords $ [deuce b, duplicity (a-b), "in"]
               | otherwise = deuce a
                 where deuce s = numWord s ++ "deuce"
 
