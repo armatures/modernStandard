@@ -1,7 +1,7 @@
 main = do  
     putStrLn "What are the two players' ordered scores?"  
     scores <- getLine  
-    putStrLn (scores ++ ", according to you!")
+    putStrLn ((modern $ parseScore scores))
 
 data Score = Score (Int, Int) deriving (Show)
 
@@ -41,5 +41,4 @@ duplicity i = dupName $ abs i
               dupName 2 = "twice"
               dupName 3 = "thrice"
               dupName a = numWord a
-
 
